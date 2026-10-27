@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "broker": "node server/broker.js",
+    "sim": "node simulator/simulator.js",
+    "sim:anomalo": "node simulator/simulator.js anomalo",
+    "server": "node server/app.js",
+    "demo": "concurrently -k -n broker,api,sim \"npm run broker\" \"npm run server\" \"npm run sim:anomalo\""
   },
   "repository": {
     "type": "git",
